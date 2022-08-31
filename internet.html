@@ -23,7 +23,7 @@
             }
 
             function InitiateSpeedDetection() {
-                ShowProgressMessage("Checking speed, please wait...");
+                ShowProgressMessage("Checking your Internet Speed");
                 window.setTimeout(MeasureConnectionSpeed, 0);
             };
 
@@ -35,7 +35,7 @@
                     showResults();
                 }
                 download.onerror = function (err, msg) {
-                    ShowProgressMessage("Invalid image, or error downloading");
+                    ShowProgressMessage("Invalid image, or not able to download");
                 }
                 startTime = (new Date()).getTime();
                 var cacheBuster = "?nnn=" + startTime;
@@ -48,11 +48,11 @@
                     var speedMbps = (speedKbps / 1024).toFixed(2);
 
                     if (speedMbps > 1) {
-                        ShowProgressMessage("Your connection speed is "+speedMbps+" Mbps");
+                        ShowProgressMessage("Your internet connection speed is "+speedMbps+" Mbps");
                     } else if (speedKbps > 1) {
-                        ShowProgressMessage("Your connection speed is "+speedKbps+" kbps");
+                        ShowProgressMessage("Your internet connection speed is "+speedKbps+" kbps");
                     } else {
-                        ShowProgressMessage("Your connection speed is "+speedBps+" bps");
+                        ShowProgressMessage("Your internet connection speed is "+speedBps+" bps");
                     }
                 }
             }
